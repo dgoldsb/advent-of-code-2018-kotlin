@@ -6,6 +6,7 @@ package advent.app
 import advent.RunnableDay
 import advent.days.Day01
 import advent.days.Day02
+import advent.days.Day03
 
 fun main() {
   fun runDay(day: RunnableDay) {
@@ -17,4 +18,5 @@ fun main() {
 
   runDay(Day01)
   runDay(Day02)
+  runDay(Day03)
 }
