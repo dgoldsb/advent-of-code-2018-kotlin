@@ -1,5 +1,5 @@
 /** Data class to deserialize day 1 input into. */
-package main.kotlin.advent.classes.day01
+package advent.classes.day01
 
 data class FrequencyChange(val value: Int) {
 

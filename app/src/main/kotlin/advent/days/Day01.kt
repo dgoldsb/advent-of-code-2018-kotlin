@@ -1,8 +1,8 @@
-package main.kotlin.advent.days
+package advent.days
 
 import kotlin.collections.HashSet
-import main.kotlin.advent.Day
-import main.kotlin.advent.classes.day01.FrequencyChange
+import advent.Day
+import advent.classes.day01.FrequencyChange
 
 object Day01 : Day<List<FrequencyChange>>(1) {
 

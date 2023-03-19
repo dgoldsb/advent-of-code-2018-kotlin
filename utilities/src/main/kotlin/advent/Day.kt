@@ -1,7 +1,6 @@
 /** Base class for Advent of Code day implementations. */
-package main.kotlin.advent
+package advent
 
-import advent.RunnableDay
 import main.kotlin.advent.utilities.ReadUtils
 
 abstract class Day<T>(private val day: Int) : RunnableDay {

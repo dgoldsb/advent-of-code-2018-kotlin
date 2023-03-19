@@ -1,7 +1,7 @@
-package main.kotlin.advent.days
+package advent.days
 
 import java.lang.RuntimeException
-import main.kotlin.advent.Day
+import advent.Day
 
 object Day02 : Day<List<String>>(2) {
 

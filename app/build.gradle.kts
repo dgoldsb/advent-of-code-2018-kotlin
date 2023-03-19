@@ -13,5 +13,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("main.kotlin.advent.app.AppKt")
+    mainClass.set("advent.app.AppKt")
 }
