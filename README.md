@@ -5,6 +5,10 @@ gradle test
 gradle run
 ```
 
+## Notes
+
+- Difference between `var` and `val`.
+
 ## Topics
 
 - [x] Use generics

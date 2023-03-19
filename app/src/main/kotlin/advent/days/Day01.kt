@@ -1,7 +1,3 @@
-/**
- * Starting with a frequency of zero, what is the resulting frequency after all of the changes in
- * frequency have been applied?
- */
 package main.kotlin.advent.days
 
 import kotlin.collections.HashSet
@@ -15,6 +11,10 @@ object Day01 : Day<List<FrequencyChange>>(1) {
   }
 
   override fun part1(input: List<FrequencyChange>): String {
+    /**
+     * Starting with a frequency of zero, what is the resulting frequency after all of the changes
+     * in frequency have been applied?
+     */
     return input.map { frequencyChange: FrequencyChange -> frequencyChange.value }.sum().toString()
   }
 

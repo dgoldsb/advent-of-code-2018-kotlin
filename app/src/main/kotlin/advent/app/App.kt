@@ -3,10 +3,18 @@
  */
 package main.kotlin.advent.app
 
+import advent.RunnableDay
 import main.kotlin.advent.days.Day01
+import main.kotlin.advent.days.Day02
 
 fun main() {
-  val result = Day01.run()
-  println("Part A: ${result.partA}")
-  println("Part B: ${result.partB}")
+  fun runDay(day: RunnableDay) {
+    val result = day.run()
+    println("Running $day")
+    println("Part A: ${result.partA}")
+    println("Part B: ${result.partB}")
+  }
+
+  runDay(Day01)
+  runDay(Day02)
 }
