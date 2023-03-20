@@ -7,6 +7,7 @@ import advent.RunnableDay
 import advent.days.Day01
 import advent.days.Day02
 import advent.days.Day03
+import advent.days.Day04
 
 fun main() {
   fun runDay(day: RunnableDay) {
@@ -16,7 +17,8 @@ fun main() {
     println("Part B: ${result.partB}")
   }
 
-  runDay(Day01)
-  runDay(Day02)
+  runDay(Day04)
   runDay(Day03)
+  runDay(Day02)
+  runDay(Day01)
 }
