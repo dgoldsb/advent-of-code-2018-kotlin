@@ -64,6 +64,20 @@ object Day04 : Day<List<GuardEvent>>(4) {
     return nappiestGuard!!
   }
 
+  /** Find the number of times at which this guard is asleep at a given minute. */
+  private fun countTimesAsleepAtMinute(
+      guardNaps: MutableList<IntRange>,
+      minute: Int,
+  ): Int {
+    var count = 0
+    for (nap in guardNaps) {
+      if (nap.contains(minute)) {
+        count += 1
+      }
+    }
+    return count
+  }
+
   /** Find the minute at which this guard is most likely asleep. */
   private fun findSleepiestMinute(
       guard: Int,
@@ -74,13 +88,7 @@ object Day04 : Day<List<GuardEvent>>(4) {
     var sleepiestMinute: Int? = null
     var countSleepiestMinuteInNaps = 0
     for (minute in 0 until 60) {
-      var count = 0
-      for (nap in guardNaps) {
-        if (nap.contains(minute)) {
-          count += 1
-        }
-      }
-
+      var count = countTimesAsleepAtMinute(guardNaps, minute)
       if (count > countSleepiestMinuteInNaps) {
         countSleepiestMinuteInNaps = count
         sleepiestMinute = minute
@@ -97,6 +105,22 @@ object Day04 : Day<List<GuardEvent>>(4) {
   }
 
   override fun part2(input: List<GuardEvent>): String {
-    return ""
+    val guardNapsMap = parseEventsToNaps(input)
+
+    var drowsiestMinute: Int? = null
+    var drowsiestGuard: Int? = null
+    var countDrowsiestMinuteInNaps = 0
+    for (guardNapEntry in guardNapsMap.iterator()) {
+      for (minute in 0 until 60) {
+        val count = countTimesAsleepAtMinute(guardNapEntry.value, minute)
+
+        if (count > countDrowsiestMinuteInNaps) {
+          countDrowsiestMinuteInNaps = count
+          drowsiestGuard = guardNapEntry.key
+          drowsiestMinute = minute
+        }
+      }
+    }
+    return (drowsiestGuard!! * drowsiestMinute!!).toString()
   }
 }
