@@ -2,6 +2,12 @@ package advent.classes.day04
 
 import java.util.InputMismatchException
 
+/**
+ * Data class to describe an event where a guard changes state.
+ *
+ * TODO: `guardId` could benefit from a wrapper type. AoC assumes it is an integer, but this may be
+ *   confusing.
+ */
 data class GuardEvent(
     val timestamp: String,
     val minute: Int,
