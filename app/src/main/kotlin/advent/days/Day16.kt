@@ -28,7 +28,24 @@ object Day16 : Day<Pair<List<OpcodeSample>, List<OpcodeInstruction>>>(16) {
   }
 
   override fun part1(input: Pair<List<OpcodeSample>, List<OpcodeInstruction>>): String {
-    val candidateOpcodes = listOf(Opcode.Addi(), Opcode.Addr())
+    val candidateOpcodes =
+        listOf(
+            Opcode.Addi(),
+            Opcode.Addr(),
+            Opcode.Mulr(),
+            Opcode.Muli(),
+            Opcode.Banr(),
+            Opcode.Bani(),
+            Opcode.Borr(),
+            Opcode.Bori(),
+            Opcode.Setr(),
+            Opcode.Seti(),
+            Opcode.Gtir(),
+            Opcode.Gtri(),
+            Opcode.Gtrr(),
+            Opcode.Eqir(),
+            Opcode.Eqri(),
+            Opcode.Eqrr())
     // TODO: Function to get map, derive answer from here.
     for (sample in input.first) {
       val filteredOpcodes = sample.filterCandidateOpcodes(candidateOpcodes)
