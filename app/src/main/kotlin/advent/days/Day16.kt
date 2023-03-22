@@ -131,7 +131,7 @@ object Day16 : Day<Pair<List<OpcodeSample>, List<OpcodeInstruction>>>(16) {
     }
 
     // Run the program.
-    var register = RegisterState(0, 0, 0, 0)
+    var register = RegisterState(listOf(0, 0, 0, 0))
     for (opcodeInstruction in input.second) {
       val opcode = intOpcodeMap[opcodeInstruction.opcode]!!
       register =

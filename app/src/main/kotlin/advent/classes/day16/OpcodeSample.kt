@@ -31,23 +31,25 @@ data class OpcodeSample(
     private val REGEX: Regex =
         Regex(
             "Before: \\[(\\d+), (\\d+), (\\d+), (\\d+)\\]" +
-                    "\\n(\\d+) (\\d+) (\\d+) (\\d+)" +
-                    "\\nAfter:  \\[(\\d+), (\\d+), (\\d+), (\\d+)\\]")
+                "\\n(\\d+) (\\d+) (\\d+) (\\d+)" +
+                "\\nAfter:  \\[(\\d+), (\\d+), (\\d+), (\\d+)\\]")
 
     fun fromString(input: String): OpcodeSample {
       val match: MatchResult = REGEX.matchEntire(input)!!
 
       return OpcodeSample(
           RegisterState(
-              match.groupValues[1].toInt(),
-              match.groupValues[2].toInt(),
-              match.groupValues[3].toInt(),
-              match.groupValues[4].toInt()),
+              listOf(
+                  match.groupValues[1].toInt(),
+                  match.groupValues[2].toInt(),
+                  match.groupValues[3].toInt(),
+                  match.groupValues[4].toInt())),
           RegisterState(
-              match.groupValues[9].toInt(),
-              match.groupValues[10].toInt(),
-              match.groupValues[11].toInt(),
-              match.groupValues[12].toInt()),
+              listOf(
+                  match.groupValues[9].toInt(),
+                  match.groupValues[10].toInt(),
+                  match.groupValues[11].toInt(),
+                  match.groupValues[12].toInt())),
           OpcodeInstruction(
               match.groupValues[5].toInt(),
               match.groupValues[6].toInt(),

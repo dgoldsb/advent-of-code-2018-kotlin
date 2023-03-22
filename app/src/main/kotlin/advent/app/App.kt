@@ -9,6 +9,7 @@ import advent.days.Day02
 import advent.days.Day03
 import advent.days.Day04
 import advent.days.Day16
+import advent.days.Day19
 
 fun main() {
   fun runDay(day: RunnableDay) {
@@ -18,6 +19,7 @@ fun main() {
     println("Part B: ${result.partB}")
   }
 
+  runDay(Day19)
   runDay(Day16)
   runDay(Day04)
   runDay(Day03)
