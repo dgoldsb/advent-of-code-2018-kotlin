@@ -1,10 +1,17 @@
 package advent.classes.day19
 
 import advent.classes.day16.RegisterState
+import java.lang.RuntimeException
 
 class OpcodeExecuter(private var registerState: RegisterState, private var pointer: Int) {
+  var opCount = 0
+
   fun execute(instructions: List<OpcodeInstruction>): RegisterState {
-    while (true) {
+    return execute(instructions, null)
+  }
+
+  fun execute(instructions: List<OpcodeInstruction>, until: Int?): RegisterState {
+    while (until == null || opCount < until) {
       require(instructions.indices.contains((registerState.get(pointer)))) {
         "Program halted unexpectedly!"
       }
@@ -15,10 +22,13 @@ class OpcodeExecuter(private var registerState: RegisterState, private var point
 
       this.registerState = newState
 
+      opCount += 1
+
       // Halting condition.
       if (!instructions.indices.contains((registerState.get(pointer)))) {
         return registerState
       }
     }
+    throw RuntimeException("Did not halt within allotted instructions")
   }
 }
